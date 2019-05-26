@@ -16,7 +16,7 @@ class Board extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      squares: Array(9).fill(null),
+      squares: Array(42).fill(null),
       xIsNext: true,
     };
   }
@@ -140,8 +140,16 @@ ReactDOM.render(
 
 
 function calculateWinner(squares) {
-  const lines = [
-  [0, 1, 2],
+  let lines = []
+  for(i = 0; i < 10; i++){
+    lines += [];
+    // for(j = 0; j < 10; j++){
+    //   lines[i].push(j);
+    // }
+  return lines;
+  }
+  [
+  [0, 1, 2 ,3], [1, 2, 3, 4],
   [3, 4, 5],
   [6, 7, 8],
   [1, 4, 7],
@@ -150,8 +158,8 @@ function calculateWinner(squares) {
   [2, 4, 6],
   ];
   for(let i = 0; i < lines.length; i++) {
-    const [a, b, c] = lines[i];
-    if(squares[a] && squares[a] === squares[b] && squares[a] === squares[c]){
+    const [a, b, c, d] = lines[i];
+    if(squares[a] && squares[a] === squares[b] && squares[a] === squares[c] && squares[a] === squares[d]){
       return squares[a];
     }
   }
